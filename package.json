@@ -1,0 +1,17 @@
+{
+    "name": "pdf-query-project",
+    "version": "1.0.0",
+    "description": "Un proyecto para procesar PDFs y hacer consultas utilizando NLP.js",
+    "main": "index.js",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.21.1",
+        "node-nlp": "^4.11.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

@@ -1,0 +1,206 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hello": {
+            "intent": "greet",
+            "domain": "default"
+          },
+          "are,how,you": {
+            "intent": "greet",
+            "domain": "default"
+          },
+          "goodby": {
+            "intent": "farewell",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greet": "default",
+          "farewell": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greet"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are you",
+            "intent": "greet"
+          },
+          {
+            "domain": "default",
+            "utterance": "goodbye",
+            "intent": "farewell"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hello": 1,
+              "how": 1,
+              "are": 1,
+              "you": 1,
+              "goodby": 1
+            },
+            "intents": {
+              "greet": 1,
+              "farewell": 1
+            },
+            "intentFeatures": {
+              "greet": {
+                "hello": 1,
+                "how": 1,
+                "are": 1,
+                "you": 1
+              },
+              "farewell": {
+                "goodby": 1
+              }
+            },
+            "featuresToIntent": {
+              "hello": [
+                "greet"
+              ],
+              "how": [
+                "greet"
+              ],
+              "are": [
+                "greet"
+              ],
+              "you": [
+                "greet"
+              ],
+              "goodby": [
+                "farewell"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hello",
+                "how",
+                "are",
+                "you",
+                "goodby"
+              ],
+              "intents": [
+                "greet",
+                "farewell"
+              ],
+              "perceptrons": [
+                [
+                  9.78219223022461,
+                  3.2960903644561768,
+                  3.2960903644561768,
+                  3.2960903644561768,
+                  -4.293883800506592,
+                  4.392626382629643
+                ],
+                [
+                  -3.1864190101623535,
+                  -1.0970242023468018,
+                  -1.0970242023468018,
+                  -1.0970242023468018,
+                  10.879276275634766,
+                  3.2979266354868995
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "goodbye"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {}
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
