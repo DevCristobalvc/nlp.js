@@ -1,6 +1,17 @@
 # Proyecto SWEBOK PDF Query
 
-Este proyecto consiste en un sistema para extraer texto de un archivo PDF (SWEBOK v3) y generar embeddings basados en el contenido del texto. Luego, se utiliza NLP.js para responder preguntas relacionadas con el contenido de ese PDF.
+Este proyecto consiste en un sistema para extraer texto de un archivo PDF (SWEBOK v3) y generar embeddings basados en el contenido del texto utilizando técnicas de Procesamiento de Lenguaje Natural (PLN) e Inteligencia Artificial (IA). Luego, se utiliza NLP.js para responder preguntas relacionadas con el contenido de ese PDF a partir de la comparación de las preguntas del usuario con los embeddings generados
+
+## Funcionalidad Técnica
+
+### Extracción de texto
+El script extract_text.py utiliza bibliotecas de Python como PyMuPDF o pdfplumber para extraer texto del archivo PDF (swebok-v3.pdf). Este texto se guarda en formato JSON para su posterior procesamiento.
+
+### Generación de embeddings
+El script generate_embeddings.py procesa el texto extraído utilizando técnicas de modelos de lenguaje como BERT o Word2Vec (implementadas en NLP.js o TensorFlow) para generar representaciones vectoriales del contenido. Los embeddings se guardan en un archivo JSON y se usan para comparar preguntas con el texto del PDF.
+
+### NLP.js y Respuestas
+El servidor Express (app.js) maneja solicitudes HTTP y responde a preguntas del usuario en lenguaje natural. Cuando se recibe una pregunta, el servidor compara los embeddings generados con el contenido del PDF utilizando la similitud coseno para determinar la sección más relevante del documento. La respuesta más relevante se devuelve al usuario, junto con la página correspondiente.
 
 ## Estructura del Proyecto
 
