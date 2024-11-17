@@ -1,3 +1,5 @@
 Flask==2.2.3
 requests==2.28.1
 pdfplumber==0.8.0
+torch==2.0.1  # Asegúrate de que la versión de torch sea compatible con tu proyecto y entorno
+torchvision==0.15.2  # Versión correspondiente a la de torch para evitar problemas de compatibilidad
