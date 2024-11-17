@@ -15,7 +15,7 @@ El servidor Express (app.js) maneja solicitudes HTTP y responde a preguntas del 
 
 ## Estructura del Proyecto
 
-...
+```
 /
 ├── data/                     # Contiene el archivo PDF y los resultados generados (JSON)
 │   ├── swebok-v3.pdf         # El archivo PDF de entrada (SWEBOK v3)
@@ -29,7 +29,7 @@ El servidor Express (app.js) maneja solicitudes HTTP y responde a preguntas del 
 │   └── app.js                # Archivo principal de servidor Express
 ├── .gitignore                # Archivos y carpetas ignorados por Git
 └── README.md                 # Este archivo de documentación
-...
+```
 
 ## Instalación
 
@@ -41,21 +41,21 @@ El servidor Express (app.js) maneja solicitudes HTTP y responde a preguntas del 
 ### Pasos para instalar
 
 1. Clona este repositorio:
-   ...
+   ```
    git clone https://github.com/tu-usuario/swebok-pdf-query.git
-   ...
+   ```
 
 2. Instala las dependencias de Node.js:
-   ...
+   ```
    cd server
    npm install
-   ...
+   ```
 
 3. Instala las dependencias de Python (si usas un entorno virtual):
-   ...
+   ```
    cd scripts
    pip install -r requirements.txt
-   ...
+   ```
 
 4. Prepara el PDF (`swebok-v3.pdf`) y colócalo en la carpeta `data/`.
 
@@ -65,9 +65,9 @@ El servidor Express (app.js) maneja solicitudes HTTP y responde a preguntas del 
 
 En el directorio `server`, ejecuta el siguiente comando para iniciar el servidor:
 
-...
+```
 node app.js
-...
+```
 
 El servidor debería estar disponible en `http://localhost:3000`.
 
@@ -75,9 +75,9 @@ El servidor debería estar disponible en `http://localhost:3000`.
 
 En el directorio `scripts`, ejecuta el siguiente comando para extraer el texto del PDF a un archivo JSON:
 
-...
+```
 python extract_text.py
-...
+```
 
 Esto generará un archivo `pdf_text.json` dentro de la carpeta `data/`.
 
@@ -85,9 +85,9 @@ Esto generará un archivo `pdf_text.json` dentro de la carpeta `data/`.
 
 Usa el siguiente script para generar los embeddings basados en el texto extraído:
 
-...
+```
 python generate_embeddings.py
-...
+```
 
 Esto generará el archivo `embeddings.json` dentro de la carpeta `data/`.
 
@@ -97,14 +97,14 @@ Una vez que tengas los embeddings generados, puedes hacer preguntas enviando sol
 
 Ejemplo de cuerpo de solicitud:
 
-...
+```
 {
   "question": "What is Software Engineering?",
   "embeddings": {
     "1": ["definition", "software engineering"]
   }
 }
-...
+```
 
 El servidor responderá con una respuesta basada en los embeddings generados.
 
